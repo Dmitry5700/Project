@@ -1,0 +1,151 @@
+﻿body {
+
+    width:100%;
+    padding:0px;
+    margin:0px;
+    font-family:Arial;
+    color:#808080;
+
+}
+
+.div-panel-service {
+    width:100%;
+    height:50px;
+    background-color:#ededee;
+    position:fixed;
+    top:0;
+    left:0;
+    text-align:center;
+    color:#808080;
+}
+
+.inp-btn-panel {
+    border-radius:3px;
+    background-color:#cccccc;
+    border:1px solid #808080;
+    cursor:pointer;
+}
+
+
+.table-admin-content {
+    width:1024px;
+    margin:100px;
+   /* border:1px silver solid;*/
+        
+
+}
+
+.table-admin-content td {
+    vertical-align:top;
+    /*border:1px silver solid;*/
+}
+
+.div-button-add {
+    width:25px;
+    height:25px;
+    border-radius:5px;
+    background-color:#808080;
+    border:2px solid silver;
+    box-shadow:2px 2px 2px black;
+    text-align:center;
+    cursor:pointer;
+    margin-top:10px;
+
+}
+    .div-button-add:hover {
+        box-shadow:1px 1px 1px black;
+    }
+
+
+.lbl-icon {
+    font-size:21px;
+    color:silver;
+
+}
+
+#divContentLesson {
+    margin-top:50px;
+}
+
+
+.div-title-lesson {
+    width:200px;
+    font-size:12px;
+    padding:3px;
+    color:#3babca;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:7px;
+    
+}
+.inp-add-lesson {
+    width:180px;
+    margin-left:3px;
+    border-radius:3px;
+    border:1px solid silver;
+}
+
+.div-content-part {
+    width:100%;
+    font-size:15px;
+    text-align:center;  
+    height:10px; 
+}
+.div-content-part nav
+ {
+    margin:0 auto;
+ }
+.div-content-part nav div {
+    padding-left:30px;
+    float:left;
+    font-size:12px;
+    color:#3babca;
+    cursor:pointer;
+    text-decoration:underline;
+        
+}
+
+label {
+    background-color:#ededee;
+    padding:5px;
+    
+}
+
+#divContentText {
+    width:100%;
+    height:500px;
+    margin-top:40px;
+   
+}
+
+    #divContentText textarea {
+        width:100%;
+        height:500px;
+        border:1px solid #ffd800;
+        overflow:hidden;
+
+    }
+
+
+
+
+#divServiceTags {
+    text-align:left;
+    margin-top:50px;
+}
+.inp-tag {
+    margin-left:20px;
+    margin-top:10px;
+    width:150px;
+    border-radius:3px;
+}
+#divServiceTags textarea {
+     width:150px;
+     height:150px;
+     margin-left:20px;
+     border:1px solid silver;
+     margin-top:10px;
+     overflow:hidden;
+
+}
+
