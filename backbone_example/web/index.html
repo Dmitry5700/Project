@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <link type="text/css" rel="stylesheet" href="css/app.css" />
+
+    <style>
+        .schl-view {
+            position: absolute;
+            width: 1000px;
+            height: 500px;
+        }
+    </style>
+
+    <!-- Открытие нового уровня -->
+    <script type="text/template" id="id-new_level">
+        <div class="overlay" style="display:block;"></div>
+        <div class="modal">
+            <div class="modal_t">Путешествие<br>продолжается...</div>
+            <div class="modal_va">
+                <div class="modal_info">
+                    <%=levelText%>
+                </div>
+            </div>
+            <div class="modal_btn">
+                <a id="id-nl_continue" class="btn">Ок</a>
+            </div>
+        </div>
+    </script>
+
+    <script src="../lib/underscore.js" type="text/javascript"></script>
+    <script src="../lib/jquery.js" type="text/javascript"></script>
+    <script src="../lib/backbone.js" type="text/javascript"></script>
+    <script src="http://api.odnoklassniki.ru/js/fapi5.js"></script>
+</head>
+
+<body>
+    <div id="id-newlevel_cnt" class="schl-view"></div>
+
+    <script src="js/app.js"></script>
+    <script src="../model/user.js" type="text/javascript"></script>
+    <script src="js/views/newLevel.js" type="text/javascript"></script>
+    <script src="../model/config.js"></script>
+    <!--<script src="../build/web/app_core.min.js"></script>-->
+    <!--<script src="../build/web/app_views.min.js"></script>-->
+
+    <script>
+        $(document).ready(function() {
+            app.start();
+        });
+    </script>
+</body>
+</html>
