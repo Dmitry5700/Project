@@ -18,6 +18,13 @@
     text-align:center;
     color:#808080;
 }
+.inp-lesson-title {
+    width:450px;
+    border:1px solid #cccccc;
+    margin:0 auto;
+    margin-top:10px;
+
+}
 
 .inp-btn-panel {
     border-radius:3px;
@@ -29,7 +36,9 @@
 
 .table-admin-content {
     width:1024px;
-    margin:100px;
+    margin:100px auto;
+
+
    /* border:1px silver solid;*/
         
 

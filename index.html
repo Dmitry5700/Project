@@ -12,7 +12,7 @@
     $(document).ready(function (){
 
         $('.div-button-add').click(function () { btnAddClick() });
-
+        
 
         ClearValues();
     });
@@ -20,16 +20,59 @@
 
     function loadLesson() {
 
-        $.ajax({
-            url: 'F:\\Web\\Course\\test1.json',
-            success: function (data) {
-                console.log(data);
-                //$('#divContentText textarea').val(data);
+       $.ajax({
+           url: 'handlers/readjson.ashx',
+           type: 'POST',
+           dataType: 'json',
+           success: function (data) {
+                
+               var title = data.title;
+
+               $('.inp-lesson-title').val(title);
+
+               //alert(data.description.src);
+//                $('#divContentText textarea').val(data);
             },
             error: function (data) {
-                alert('File not found.. May be, later...');
+                alert('File not found..  May be, later...');
             },
         });
+    }
+
+    function saveLesson()
+    {
+        var title = $('.inp-lesson-title').val();
+        var thems = "";
+        var tags = "";
+        var ball = $('#inpExpiriens').val();
+        var comment = $('#divServiceTags textarea').text().trim();
+        var content = $('#divContentText textarea').text().trim();
+
+        $('#divContentLesson .div-title-lesson').each(function () {
+            thems += $(this).text().trim() + ",";
+        });
+
+        $('#divServiceTags .inp-tag').each(function () {
+            if ($(this).val().trim() != '')
+            {
+                tags += $(this).val().trim() + ",";
+            }
+        });
+
+        if (thems != ''){ thems = thems.substring(0, thems.length - 1); }
+        if (tags != ''){ tags = tags.substring(0, tags.length - 1); }
+
+        $.ajax({
+            url: 'handlers/writejson.ashx',
+            type: 'POST',
+            dataType:'json',
+            data: { 'title': title, 'thems': thems, 'tags': tags, 'content': content },
+            success: function (data) {
+                alert(data);
+            }
+
+        });
+
     }
 
 
@@ -43,16 +86,15 @@
 
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"  />
     <title>Администрирование урока</title>
 </head>
 <body>
     <div class="div-panel-service">
-
-
-
-
+        Заголовок урока:    <input type="text" class="inp-lesson-title" />
+    
     </div>
+
 
     <table class="table-admin-content">
         <tr>
@@ -96,7 +138,9 @@
 
                 </div>
                 <br />
-                <input type="button" value="Загрузить урок" class="inp-btn-panel" onclick="loadLesson()"/> <input type="button" value="Записать урок" class="inp-btn-panel" /> <input type="button" value="Preview" class="inp-btn-panel" style="float:right;" /> 
+                <input type="button" value="Загрузить урок" class="inp-btn-panel" onclick="loadLesson()"/>
+                <input type="button" value="Записать урок" class="inp-btn-panel" onclick="saveLesson()"/>
+                <input type="button" value="Preview" class="inp-btn-panel" style="float:right;" /> 
 
             </td>
             <td>
